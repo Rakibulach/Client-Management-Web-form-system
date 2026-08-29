@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Onboarding Form — Biswas IT Farm</title>
+  <meta name="description" content="Tell us about your project and we'll get back to you within one business day.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap (form validation behavior + base classes) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- ===================================================
+       BRAND BAR
+  ==================================================== -->
+    <div class="brand-bar">
+      <div class="brand-mark">
+        <img src="images/logo.jpg" alt="Biswas IT Farm logo">
+        <div class="name">Biswas IT Farm<span>Client Onboarding</span></div>
+      </div>
+      <div class="status"><span class="dot"></span> Currently accepting new clients</div>
+    </div>
+
+    <!-- ===================================================
+       FORM SHELL: intro + form panel
+  ==================================================== -->
+    <div class="form-shell">
+
+      <!-- Intro / sticky side panel -->
+      <aside class="form-intro">
+        <div class="eyebrow">New client intake</div>
+        <h1>Let's get your project details.</h1>
+        <p>Fill out the form and our team will review your requirements and reach out with next steps — usually within
+          one business day.</p>
+
+        <ol class="intro-steps">
+          <li>
+            <span class="num">1</span>
+            <div><b>Tell us about you</b><span class="desc">Your name, business and how to reach you.</span></div>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <div><b>Choose your services</b><span class="desc">Pick everything relevant — we'll scope it
+                together.</span></div>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <div><b>Share your requirements</b><span class="desc">The more detail, the faster we can quote it.</span>
+            </div>
+          </li>
+        </ol>
+
+        <div class="intro-contact">
+          Prefer email? Write to us directly at<br>
+          <a href="mailto:hello@biswasitfarm.com">info@biswasitfarm.com</a>
+        </div>
+      </aside>
+
+      <!-- Form panel -->
+      <div class="form-panel">
+
+        <div class="success-alert" id="successAlert">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+          <div>
+            <strong>Thanks — your details have been received.</strong>
+            It's also been added to the list below.
+          </div>
+        </div>
+
+        <form id="clientForm" class="needs-validation" novalidate>
+
+          <!-- Step 1: Client Information -->
+          <fieldset>
+            <legend><span class="step-tag">01</span> Client Information</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label" for="clientName">Client name</label>
+                <input type="text" class="form-control" id="clientName" name="clientName"
+                  placeholder="e.g. Nusrat Rahman" minlength="2" required>
+                <div class="invalid-feedback">Please enter your full name (at least 2 characters).</div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="businessName">Business name</label>
+                <input type="text" class="form-control" id="businessName" name="businessName"
+                  placeholder="e.g. Northpeak Ltd." minlength="2" required>
+                <div class="invalid-feedback">Please enter your business or company name.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label" for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="you@company.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="phone">Phone number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+880 1XXX-XXXXXX"
+                  pattern="^[0-9+\-\s()]{7,20}$" required>
+                <div class="invalid-feedback">Please enter a valid phone number (digits only, 7–20 characters).</div>
+              </div>
+            </div>
+
+            <!-- Business URL / Page Link -->
+            <div class="form-row">
+              <div class="field">
+                <label class="field-label" for="businessUrl">Business URL / Page Link</label>
+                <input type="url" class="form-control" id="businessUrl" name="businessUrl"
+                  placeholder="https://www.example.com">
+                <div class="invalid-feedback">Please enter a valid business URL or page link.</div>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- Step 2: Service Selection -->
+          <fieldset id="serviceFieldset">
+            <legend><span class="step-tag">02</span> Service Selection</legend>
+
+            <label class="field-label">Which services are you interested in? <span class="opt">(select all that
+                apply)</span></label>
+            <div class="service-grid">
+              <div class="service-pill">
+                <input type="checkbox" id="svc-web" name="services" value="web_design">
+                <label for="svc-web"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Web Design</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-dev" name="services" value="development">
+                <label for="svc-dev"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Development</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-seo" name="services" value="seo">
+                <label for="svc-seo"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> SEO &amp; Growth</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-brand" name="services" value="branding">
+                <label for="svc-brand"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Brand Identity</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-app" name="services" value="app">
+                <label for="svc-app"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Mobile App</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-maint" name="services" value="maintenance">
+                <label for="svc-maint"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Maintenance</label>
+              </div>
+              <div class="service-pill">
+                <input type="checkbox" id="svc-other" name="services" value="other">
+                <label for="svc-other"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="3">
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg></span> Other</label>
+              </div>
+            </div>
+            <div class="service-error" id="serviceError">Please select at least one service.</div>
+          </fieldset>
+
+          <!-- Step 3: Project Budget -->
+          <fieldset>
+            <legend><span class="step-tag">03</span> Project Budget</legend>
+
+            <div class="field">
+              <label class="field-label" for="budget">Estimated budget (USD)</label>
+              <select class="form-select" id="budget" name="budget" required>
+                <option value="" selected disabled>Select a budget range…</option>
+                <option value="under_500">Under $500</option>
+                <option value="500_1000">$500 – $1,000</option>
+                <option value="1000_3000">$1,000 – $3,000</option>
+                <option value="3000_5000">$3,000 – $5,000</option>
+                <option value="over_5000">$5,000+</option>
+              </select>
+              <div class="invalid-feedback">Please choose an estimated budget range.</div>
+              <span class="budget-note">Not sure yet? Pick your best estimate — we can refine it together.</span>
+            </div>
+          </fieldset>
+
+          <!-- Step 4: Requirements -->
+          <fieldset>
+            <legend><span class="step-tag">04</span> Project Requirements</legend>
+
+            <div class="field">
+              <label class="field-label" for="requirement">Tell us about your project</label>
+              <textarea class="form-control" id="requirement" name="requirement" rows="5" minlength="20"
+                placeholder="Describe your goals, timeline, existing brand assets, and anything else that would help us scope the work…"
+                required></textarea>
+              <div class="invalid-feedback">Please add at least 20 characters describing your requirements.</div>
+              <div class="char-counter" id="charCounter">0 / 800</div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Submit client details
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+            <span class="form-note">No spam — we only use this to prepare your project quote.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===================================================
+       SUBMITTED CLIENTS
+  ==================================================== -->
+    <section class="submissions" id="submissions">
+      <div class="submissions-head">
+        <div>
+          <h2>Submitted Clients <span id="submissionCount">0</span></h2>
+
+        </div>
+        <button type="button" class="btn-clear" id="clearAllBtn">Clear all</button>
+      </div>
+
+      <div class="submissions-empty" id="submissionsEmpty">
+        No client submissions yet — entries you submit above will appear here.
+      </div>
+
+      <div class="table-wrap" id="tableWrap" style="display:none;">
+        <table class="clients-table">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Business &amp; Contact</th>
+              <th>Services</th>
+              <th>Budget</th>
+              <th>Requirement</th>
+              <th>Submitted</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="clientsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      © 2026 Biswas IT Farm — Internal client onboarding tool. Built by Md Rakibul Islam.
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
